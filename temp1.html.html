@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Example</title>
+  <!-- Import jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Link to our own JS file -->
+  <script src="script.js" defer></script>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background: coral;
+      text-align: center;
+      line-height: 200px;
+      margin: 20px auto;
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">jQuery Example</h2>
+  <div id="box">Hello</div>
+  <div style="text-align:center;">
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+  </div>
+</body>
+</html>
