@@ -6,6 +6,6 @@ import F1 from './f1.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <F1 />
+    <App/>
   </StrictMode>,
 )
