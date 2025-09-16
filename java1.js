@@ -1,3 +1,4 @@
+/print statement
 console.log("SRIT")
 
 //Data types in js
@@ -7,6 +8,8 @@ str="hi";
 bo1=true;
 BigInt=752085208528520520;
 //undefined
+unde;
+null=null;
 
 //var,let,const
 
@@ -19,8 +22,7 @@ let age=20;
 console.log(age)
 age=21;
 console.log(age)
-const givenname="srinivasa srit";
+const givenname="srinivasa rit";
 console.log(givename)
-
-
-
+givenname="rit";
+console.log(givenname)

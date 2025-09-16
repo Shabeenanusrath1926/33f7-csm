@@ -1,0 +1,2 @@
+git config --global user.gmail "234g1a33f7@srit.ac.in"
+git config --global user.name "shabeena" hgghchgcghjhjhjhoiiju

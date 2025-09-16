@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,3 +146,151 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task App (Max 3 Tasks)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafaff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgb(142, 250, 132);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(174, 239, 127, 0.368);
+      width: 350px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    #taskList input {
+      width: 80%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #e6981c;
+      border-radius: 5px;
+    }
+    #addTask {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #f010d9;
+      color: rgba(237, 228, 232, 0.979);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #addTask:hover {
+      background: #45a049;
+    }
+    #taskOutput {
+      margin-top: 20px;
+      text-align: left;
+      max-height: 200px;
+      overflow-y: auto;
+      border-top: 1px solid #ddddddc1;
+      padding-top: 10px;
+    }
+    .taskItem {
+      background: #ebeb32;
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .taskItem.completed {
+      text-decoration: line-through;
+      color: #f40bbe;
+      background: #d1d1d1;
+    }
+    .completeBtn {
+      background: #4caf50;
+      border: none;
+      color: rgb(255, 153, 0);
+      padding: 4px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .completeBtn:hover {
+      background: #a04583;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📋 My Tasks (Max 3)</h2>
+
+    <div id="taskList">
+      <input type="text" placeholder="Enter task..." />
+    </div>
+
+    <button id="addTask">➕ Add Task</button>
+
+    <div id="taskOutput">
+      <!-- Tasks appear here -->
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      // Add new input field when button clicked
+      $("#addTask").click(function(){
+        $("#taskList").append('<input type="text" placeholder="Enter task..." /><br>');
+      });
+
+      // On pressing Enter in any input, add the task to output and clear input
+      $("#taskList").on('keypress', 'input[type=text]', function(e){
+        if(e.which == 13){ // Enter key
+          const taskText = $(this).val().trim();
+          if(taskText){
+            if($("#taskOutput .taskItem").length >= 3){
+              alert("You can add only 3 tasks.");
+              return;
+            }
+            addTaskToOutput(taskText);
+            $(this).val('');
+          }
+        }
+      });
+
+      // Function to add task to output box
+      function addTaskToOutput(text){
+        const taskItem = $(`
+          <div class="taskItem">
+            <span class="taskText">${text}</span>
+            <button class="completeBtn">Complete</button>
+          </div>
+        `);
+        $("#taskOutput").append(taskItem);
+      }
+
+      // Toggle completed state on clicking complete button
+      $("#taskOutput").on('click', '.completeBtn', function(){
+        const taskDiv = $(this).parent();
+        taskDiv.toggleClass('completed');
+        if(taskDiv.hasClass('completed')){
+          $(this).text('Undo');
+        } else {
+          $(this).text('Complete');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+>>>>>>> ce6c318f2fcac4ed9ab5b7baa674f3afef060180
